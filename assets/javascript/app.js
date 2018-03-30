@@ -16,7 +16,7 @@ var config = {
 
       var trainName = $("#train-name-input").val().trim();
       var trainDestination = $("#destination-input").val().trim();
-      var trainFrequency = moment($("#frequency-input").val().trim(), "h:mm").format("X");
+      var trainFrequency = moment($("#frequency-input").val().trim(), "HH:mm").format("X");
       var trainTime = moment($("#first-time-input").val().trim()).format();
 
       var newTrain = {
@@ -52,4 +52,4 @@ var config = {
   var trainMinutesAway = moment().diff(moment.unix(trainTime, "X"), "minutes");
   console.log(trainMinutesAway);
 
-  $("#train-table > tbody").append("<tr><td>" )
+  $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + trainTime + "</td><td>" + trainMinutesAway + "</td></tr>")
