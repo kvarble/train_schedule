@@ -1,0 +1,25 @@
+.card-title {
+    font-size: 45px !important;
+    font-family: 'Vollkorn SC', serif;
+}
+p {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 20px;
+}
+.train-img {
+    background: url(../train.png) !important;
+    background-repeat: no-repeat !important;
+    height: 70px;
+    padding: none;
+    margin-left: 380px;
+}
+.card-action {
+    padding: none;
+}
+.btn-large {
+    background-color: #CF6052;
+}
+
+.btn-large:hover {
+    background-color: slategrey;
+}

@@ -5,78 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">    <link rel="stylesheet" href="assets/css/style.css"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Cutive+Mono|Vollkorn+SC|Wire+One" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <title>Train Schedule</title>
 
 </head>
 <body>
-    <div class="jumbotron">
-        <h1>Train Schedule</h1>
-        <p>I'm sitting in the railway station.
-                Got a ticket to my destination.</p>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Train Schedule</h3>
-        </div>
-        <div class="panel-body">
-            <table class="table" id="train-table"> 
-                <thead>
-                  <tr>
-                    <th scope="col">Train Name</th>
-                    <th scope="col">Destination</th>
-                    <th scope="col">Frequency (min)</th>
-                    <th scope="col">Next Arrival</th>
-                    <th scope="col">Minutes Away</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            
-                        </td>
-                    </tr>
-                </tbody>
-                </table>
-        </div>
-      </div>
-      <div class=container>
-            <div class="panel panel-default">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">Add a Train</h3>
+    <div class="container">
+        <div class="row">
+                <div class="col s12 m12">
+                  <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Schedule a train.</span>
+                      <p>I'm sitting in the railway station.
+                            Got a ticket to my destination.
+                            </p>
+                            <p>
+                            Add a train in the form below, and watch it appear on the schedule. 
+                        </p>
                     </div>
-                    <div class="panel-body">
-        <div class="form-group row">
-            <label for="example-text-input" class="col-2 col-form-label">Train Name</label>
-            <div class="col-10">
-              <input class="form-control" type="text" id="train-name-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-search-input" class="col-2 col-form-label">Destination</label>
-            <div class="col-10">
-              <input class="form-control" type="text" id="destination-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-email-input" class="col-2 col-form-label">First Train Time (HH:mm - military time)</label>
-            <div class="col-10">
-              <input class="form-control" type="text" id="first-time-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="example-url-input" class="col-2 col-form-label">Frequency (min)</label>
-            <div class="col-10">
-              <input class="form-control" type="url" id="frequency-input">
-            </div>
-          </div>
-          <button type="button" class="btn btn-outline-primary" id="add-train-btn">Add train</button>
-      </div>
-      </div>
-      <script type="text/javascript" src="assets/javascript/app.js"></script>
-</body>
-</html>
+                    <div class="card-action">
+                        <div class="train-img"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <table class="table centered" id="train-table"> 
+                    <thead>
+                      <tr>
+                        <th>Train Name</th>
+                        <th>Destination</th>
+                        <th>Frequency (min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                      </tr>
+                      <br></br>
+                    </thead>
+                    <br></br>
+                    <tbody>
+                        <tr>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                <br></br>
+                    <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="train-name-input" type="text" class="validate">
+                                  <label class="active" for="train_name">Train Name</label>
+                                </div>
+                            </div>
+                                <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="destination-input" type="text" class="validate">
+                                  <label class="active" for="destination">Destination</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="frequency-input" type="text" class="validate">
+                                  <label class="active" for="frequency">Frequency (minutes)</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="first-time-input" type="text" class="validate">
+                                  <label class="active" for="first_time">First Train Time (HH:mm - military time)</label>
+                                </div>
+                              </div>
+                              </form>
+                              <a class="waves-effect waves-light btn-large" id="add-train-btn"><i class="material-icons right">train</i>add train</a>
+
+                              </div>
+
+                            </div>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
+    </body>
+    </html>
